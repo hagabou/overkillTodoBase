@@ -7,9 +7,11 @@
           <h4 matLine>
             <mat-checkbox
               [checked]="todo.isClosed"
-              disabled="true"
+              (change)="toggleTodo(todo)"
             ></mat-checkbox>
-            {{ todo.title }}
+            <span [ngClass]="{ 'crossed-out': todo.isClosed }">
+                {{ todo.title }}
+            </span>
           </h4>
         </mat-list-item>
       </mat-list>

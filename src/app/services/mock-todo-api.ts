@@ -17,4 +17,19 @@ export class MockTodoApi implements InMemoryDbService {
     return { todos };
   }
 
+   put(reqInfo: any): {}{
+    const updatedTodo = reqInfo.utils.getJsonBody(reqInfo.req);
+    const todos = reqInfo.collection;
+    const index = todos.findIndex((todo: Todo) => todo.title === updatedTodo.title);
+
+    if (index > -1) {
+      todos[index] = updatedTodo;
+    }
+
+    return reqInfo.utils.createResponse$(() => ({
+      body: updatedTodo,
+      status: 200,
+    }));
+  }
+
 }

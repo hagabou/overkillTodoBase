@@ -14,4 +14,9 @@ export class TodoService {
   list(): Observable<Todo[]> {
     return this.http.get<Todo[]>(`${environment.baseUrl}/api/todos`);
   }
+
+  toggleTodoState(todo: Todo): Observable<Todo> {
+    const updatedTodo = { ...todo, isClosed: !todo.isClosed };
+    return this.http.put<Todo>(`${environment.baseUrl}/${todo.title}`, updatedTodo);
+  }
 }

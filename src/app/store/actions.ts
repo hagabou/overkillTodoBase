@@ -8,4 +8,9 @@ export const loadTodosSuccess = createAction(
   props<{ todos: Todo[] }>()
 );
 
+export const toggleTodoState = createAction(
+  '[Todo List] Toggle Todo State',
+  props<{ todo: Todo }>()
+);
+
 export const loadTodosFailed = createAction('[Todos] Load todos failed');
