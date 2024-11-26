@@ -20,11 +20,13 @@ import {Effects} from './store/effects';
 import {HttpClientModule} from '@angular/common/http';
 import {MockTodoApi} from './services/mock-todo-api';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import { DetailTodoComponent } from './detail-todo/detail-todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent
+    TodoListComponent,
+    DetailTodoComponent
   ],
   imports: [
     BrowserModule,

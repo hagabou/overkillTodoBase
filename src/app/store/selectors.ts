@@ -7,3 +7,8 @@ export const selectTodos = createSelector(
   getState,
   (state: State) => state.todos,
 );
+
+export const selectTodoByTitle = (title: string) =>
+  createSelector(selectTodos, (todos) =>
+    todos.find((todo) => todo.title === title)
+  );

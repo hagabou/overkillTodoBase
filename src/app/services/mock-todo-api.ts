@@ -9,7 +9,7 @@ export class MockTodoApi implements InMemoryDbService {
 
   createDb(): {} {
     const todos: Todo[] = [
-      { title: 'todo in memory 1', isClosed: false },
+      { title: 'todo in memory 1', isClosed: false, description: 'Description 1' },
       { title: 'todo in memory 2', isClosed: false },
       { title: 'todo in memory 3', isClosed: true },
       { title: 'todo in memory 4', isClosed: false },

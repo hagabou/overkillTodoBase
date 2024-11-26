@@ -11,3 +11,21 @@
   font-style: italic;
   opacity: 0.7;
 }
+
+button {
+  /* Style de base */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}

@@ -12,6 +12,13 @@
             <span [ngClass]="{ 'crossed-out': todo.isClosed }">
                 {{ todo.title }}
             </span>
+            <button mat-raised-button
+                    matTooltip="Detail"
+                    (click)="viewDetails(todo)"
+            >
+              Detail
+            </button>
+
           </h4>
         </mat-list-item>
       </mat-list>
