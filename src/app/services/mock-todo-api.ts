@@ -32,4 +32,13 @@ export class MockTodoApi implements InMemoryDbService {
     }));
   }
 
+  post(reqInfo: any): {}{
+    const newTodo = reqInfo.utils.getJsonBody(reqInfo.req);
+    reqInfo.collection.unshift(newTodo);
+    return reqInfo.utils.createResponse$(() => ({
+      body: newTodo,
+      status: 201,
+    }));
+  }
+
 }

@@ -19,4 +19,8 @@ export class TodoService {
     const updatedTodo = { ...todo, isClosed: !todo.isClosed };
     return this.http.put<Todo>(`${environment.baseUrl}/${todo.title}`, updatedTodo);
   }
+
+  addTodo(todo: Todo): Observable<Todo> {
+    return this.http.post<Todo>(`${environment.baseUrl}`, todo);
+  }
 }

@@ -1,4 +1,13 @@
 <div id="container">
+  <div id="new-todo-form">
+    <mat-form-field>
+      <input matInput placeholder="Title" [(ngModel)]="newTodoTitle" required />
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Description" [(ngModel)]="newTodoDescription"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addTodo()">Add Todo</button>
+  </div>
   <mat-card>
     <mat-card-title>Todos</mat-card-title>
     <mat-card-content>
@@ -13,7 +22,7 @@
                 {{ todo.title }}
             </span>
             <button mat-raised-button
-                    matTooltip="Detail"
+                    class="detail-button"
                     (click)="viewDetails(todo)"
             >
               Detail

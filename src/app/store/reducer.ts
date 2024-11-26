@@ -1,6 +1,6 @@
 import {Todo} from '../models/todo';
 import {createReducer, on} from '@ngrx/store';
-import {loadTodosSuccess, toggleTodoState} from './actions';
+import {addTodo, loadTodosSuccess, toggleTodoState} from './actions';
 
 export const featureKey = 'todosStore';
 
@@ -28,5 +28,9 @@ export const todosReducer = createReducer(
         ...state,
         todos: updatedTodos.sort((a, b) => Number(a.isClosed) - Number(b.isClosed)),
       };
-    })
+    }),
+  on(addTodo, (state, { todo }) => ({
+    ...state,
+    todos: [todo, ...state.todos],
+  }))
 );

@@ -21,6 +21,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {MockTodoApi} from './services/mock-todo-api';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import { DetailTodoComponent } from './detail-todo/detail-todo.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -28,22 +32,26 @@ import { DetailTodoComponent } from './detail-todo/detail-todo.component';
     TodoListComponent,
     DetailTodoComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatIconModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatListModule,
-    MatCheckboxModule,
-    FormsModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(MockTodoApi),
-    StoreModule.forRoot({todosStore: todosReducer}),
-    EffectsModule.forRoot([Effects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatIconModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatListModule,
+        MatCheckboxModule,
+        FormsModule,
+        HttpClientModule,
+        HttpClientInMemoryWebApiModule.forRoot(MockTodoApi),
+        StoreModule.forRoot({todosStore: todosReducer}),
+        EffectsModule.forRoot([Effects]),
+        StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatTooltipModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

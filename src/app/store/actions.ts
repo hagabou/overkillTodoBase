@@ -13,4 +13,9 @@ export const toggleTodoState = createAction(
   props<{ todo: Todo }>()
 );
 
+export const addTodo = createAction(
+  '[Todo List] Add Todo',
+  props<{ todo: Todo }>()
+);
+
 export const loadTodosFailed = createAction('[Todos] Load todos failed');
